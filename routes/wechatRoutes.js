@@ -46,7 +46,7 @@ router.post("/callback", (req, res) => {
   const encryptedMessage = req.body.xml.Encrypt;
 
   // 验证签名
-  const sortedParams = [TOKEN, timestamp, nonce, encryptedMessage]
+  const sortedParams = [WECHAT_TOKEN, timestamp, nonce, encryptedMessage]
     .sort()
     .join("");
   const hash = sha1(sortedParams);

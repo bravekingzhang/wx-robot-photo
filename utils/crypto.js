@@ -1,5 +1,9 @@
 const crypto = require("crypto");
 
+const { WECHAT_ENCODING_AES_KEY } = require("../config/env");
+
+const AES_KEY = Buffer.from(WECHAT_ENCODING_AES_KEY + '=', 'base64');
+
 function sha1(str) {
   const hash = crypto.createHash("sha1");
   hash.update(str);
